@@ -1,35 +1,31 @@
 import 'package:flutter/material.dart';
 
+const startAlignment = Alignment.topCenter;
+const endAlignment = Alignment.bottomCenter;
+
 class GradientContainer extends StatelessWidget {
   const GradientContainer({super.key});
 
-  void main() {
-    runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          body: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.white,
-                  Colors.blue,
-                  Colors.red,
-                ],
-              ),
-            ),
-            child: Center(
-              child: Text(
-                'Hello world!',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.white,
+            Colors.blue,
+            Colors.red,
+          ],
+          begin: startAlignment,
+          end: endAlignment,
+        ),
+      ),
+      child: const Center(
+        child: Text(
+          'Hello world!',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 32,
           ),
         ),
       ),
